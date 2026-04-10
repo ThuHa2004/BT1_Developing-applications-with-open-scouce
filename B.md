@@ -20,3 +20,12 @@ Các lệnh cần tìm hiểu:
 ## 7. Đảm bảo tường lửa trên Ubuntu đã cho phép cổng 80, 1880, 9630 (Lệnh: sudo ufw allow ...)
 -------------------
 # BÀI LÀM
+## I. Cài đặt hệ điều hành Unbuntu 24.04.4 LTS
+### 1. Truy cập vào: https://ubuntu.com/download/desktop để download
+- Chọn Download để tải Ubuntu 24.04.4 LTS về máy 
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/82f51722-db46-4156-85a8-318534309091" />
+
+### 2. Sử dụng VM_Ware để giả lập
+- Mở VM_Ware và 
+
+
