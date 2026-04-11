@@ -25,6 +25,8 @@ mkdir -p ~/myapp
 cd ~/myapp
 mkdir myweb nginx nodred
 ```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/359df13c-5096-4337-a9fa-2ad9c28ea781" />
+
 ## 2. Sau khi đã tạo xong thư mục rồi, tiếp tục tạo file index.html
 Tạo file ```./myweb/index.html```
 Sử dụng lệnh ```nano ~/myapp/myweb/index.html``` để viết nội dung file.
@@ -78,21 +80,11 @@ Sau khi viết xong nội dung file, nhấn phím ```Ctrl+O``` để lưu nội 
             font-weight: bold;
             color: #222;
         }
-
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            object-fit: cover;
-            border: 3px solid #74ebd5;
-        }
     </style>
 </head>
 
 <body>
     <div class="card">
-        <img src="https://i.pravatar.cc/100" class="avatar">
 
         <h1>Thông tin sinh viên</h1>
 
