@@ -19,5 +19,92 @@
   - Chạy docker-compose lần đầu để Node-RED tự sinh file cấu hình trong thư mục ./nodered, sau đó mới tiến hành sửa settings.js và restart lại container
 -------------
 # BÀI LÀM
+## 1. Sử dụng lệnh sau để tạo thư mục ```~/myapp``` và chuyển vào trong thư mục đã tạo để tạo các thư mục con:
+```
+mkdir -p ~/myapp
+cd ~/myapp
+mkdir myweb nginx nodred
+```
+## 2. Sau khi đã tạo xong thư mục rồi, tiếp tục tạo file index.html
+Tạo file ```./myweb/index.html```
+Sử dụng lệnh ```nano ~/myapp/myweb/index.html``` để viết nội dung file.
+Sau khi viết xong nội dung file, nhấn phím ```Ctrl+O``` để lưu nội dung file, và tổ hợp phím ```Ctrl+X``` để thoát
+```
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin cá nhân</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 3px solid #74ebd5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="https://i.pravatar.cc/100" class="avatar">
+
+        <h1>Thông tin sinh viên</h1>
+
+        <p><span class="label">Họ và tên:</span> Trần Thị Thu Hà</p>
+        <p><span class="label">MSV:</span> K225480106009 </p>
+        <p><span class="label">Lop:</span> K58KTP.01</p>
+    </div>
+</body>
+</html>
+```
+
+## 3. Tạo file docker-compose.yml
+- Sử dụng lệnh ```nano ~/myapp/docker-compose.yaml``` để tạo file
 
 
