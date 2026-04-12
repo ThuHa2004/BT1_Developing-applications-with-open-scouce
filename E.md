@@ -42,7 +42,7 @@ docker-compose logs nodered
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c7cfd34f-6114-487a-9e0e-be2501a28cf2" />
 
 - Web (Nginx): **http://172.20.10.2:80**
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/37078688-0f98-46d3-8ddc-b7a208942c0a" />
+<img width="1913" height="1034" alt="image" src="https://github.com/user-attachments/assets/bbbc568e-2c40-4557-bbf4-8fb13c585d8b" />
 
 - Myapi: **http://172.20.10.2:9630**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5058c823-0b37-4cc0-9d8a-b887b67cc992" />
@@ -50,6 +50,34 @@ docker-compose logs nodered
 -> Tất cả các service đều chạy được 
 
 ## 4. Tạo API đơn giản trên Node-RED
+- Truy cập vào giao diện Node-RED cổng 1880, kéo thả các node và viết code đơn giản để tạo API để nginx có thể nói chuyện được với Node-RED
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/318ffa8e-795b-49b8-97fc-1945e7164de7" />
 
+## 5. Sửa file ```index.html``` để gọi API
+- Lệnh: ```nano myweb/index.html```
+- Thêm đoạn sau vào file ```index.html```
+```
+<script>
+        async function callNodeRed() {
+            const resultElement = document.getElementById('api-result');
+            resultElement.innerText = "Đang kết nối...";
+
+            try {
+                const response = await fetch('/api/test-api');
+                
+                if (!response.ok) {
+                    throw new Error('Không thể kết nối API (Lỗi ' + response.status + ')');
+                }
+
+                const data = await response.json();
+                
+                resultElement.innerText = "Dữ liệu: " + JSON.stringify(data.message || data);
+            } catch (error) {
+                resultElement.innerText = "Lỗi: " + error.message;
+                console.error("API Error:", error);
+            }
+        }
+```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/22d16b7e-4b71-4749-81c1-b3fa1dea6743" />
 
 
