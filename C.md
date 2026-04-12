@@ -31,61 +31,64 @@ mkdir myweb nginx nodred
 - Tạo file ```./myweb/index.html```
 - Sử dụng lệnh ```nano ~/myapp/myweb/index.html``` để viết nội dung file. Sau khi viết xong nội dung file, nhấn phím ```Ctrl+O``` để lưu nội dung file, và tổ hợp phím ```Ctrl+X``` để thoát nano.
 ```
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-        <meta charset="UTF-8">
-        <title>DevApp with open source</title>
+    <meta charset="UTF-8">
+    <title>DevApp with Open Source</title>
 
-        <style>
-                body {
-                        margin: 0;
-                        padding: 0;
-                        font-family: Arial, sans-serif;
-                        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-                        height: 100vh;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-                .card {
-                        background: white;
-                        padding: 30px 40px;
-                        border-radius: 15px;
-                        box-shaddow: 0 10px 25px rgba(0,0,0,0.2);
-                        text-align: center;
-                        width: 350px;
-                        transition: 0.3s;
+        .card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 350px;
+            transition: 0.3s;
+        }
 
-                .card:hover {
-                        transform: translateY(-5px);
-                        box-shaddow: 0 15px 35px rgba(0,0,0,0.3);
-                }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
 
-                h1 {
-                        color: #333;
-                        margin-bottom: 20px;
-                }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-                p {
-                        font-size: 16px;
-                        color: #555;
-                        margin: 10px 0;
-                }
+        p {
+            font-size: 16px;
+            color: #555;
+            margin: 10px 0;
+        }
 
-                .label {
-                        font-weight: bold;
-                        color: #222;
-                }
-        </style>
+        .label {
+            font-weight: bold;
+            color: #222;
+        }
+    </style>
 </head>
 
 <body>
-        <div class="card">
-                <h1>Thong tin sinh vien</h1>
-                <p><span class="label">Ho va ten:</span> Tran Thi Thu Ha </p>
-                <p><span class="label">MSSV:</span> K225480106009 </p>
-                <p><span class="label">Lop:</span> K58KTP.01 </p>
-        </div>
+    <div class="card">
+        <h1>Thông tin sinh viên</h1>
+        <p><span class="label">Họ và tên:</span> Trần Thị Thu Hà </p>
+        <p><span class="label">MSSV:</span> K225480106009 </p>
+        <p><span class="label">Lớp:</span> K58KTP.01 </p>
+    </div>
 </body>
 </html>
 ```
@@ -175,7 +178,7 @@ docker-compose restart
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7168fe19-ecb4-473b-ad3c-f4dbf831e36c" />
 
 - Truy cập web: **http://172.20.10.2:80**
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/29b9a322-ebbc-431d-8ed2-d8f9d9093e81" />
+<img width="1913" height="1034" alt="Screenshot 2026-04-12 174237" src="https://github.com/user-attachments/assets/25829108-20a4-479a-b58a-38c198b5e26d" />
 
 
 
