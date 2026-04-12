@@ -51,8 +51,16 @@ tunnel:
 ### 7. Sau khi nhấn ```complete setup``` sẽ thấy trang Connectors hiện trạng thái ```healthy``` là đường hầm đã thông
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bc52327a-c579-4698-8512-b44df85087ab" />
 
-### 8. Kiểm tra
-- Truy cập vào web bằng tài khoản và thiết bị bất kỳ 
+### 8. Kiểm tra. Truy cập vào web bằng tài khoản và thiết bị bất kỳ 
 - web: **thuha_app.tranthithuha.id.vn**
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ad957589-8e02-4227-bb8e-e2214240507a" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5fca4b80-e293-4409-83f2-362771fbbdee" />
+
+- API: **thuha_app.tranthithuha.id.vn/joke/**
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e0ccccc2-6401-4180-9783-d06412b15be5" />
+
+- API: **thuha_app.tranthithuha.id.vn/health/**
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/057ed663-231e-46a8-a83b-aba80162f3cd" />
+
+
+
 
