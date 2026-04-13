@@ -1,10 +1,10 @@
 # Cài đặt Ubuntu + Docker
 # YÊU CẦU: 
-## 1. Cài đặt hệ điều hành Ubuntu 24.04.4 LTS
+### 1. Cài đặt hệ điều hành Ubuntu 24.04.4 LTS
 - Sử dụng một trong các công cụ để giả lập: HyperV (có sẵn của windows), VirutualBox (Miễn phí), VM_Ware (Bản quyền).
 - Download file iso để cài đặt.
 - Cấu hình mạng trong Ubuntu (và công cụ để giả lập) để cho phép truy cập SSH vào Ubuntu từ cmd của windows.
-## 2. Tìm hiểu các lệnh cơ bản của Ubuntu
+### 2. Tìm hiểu các lệnh cơ bản của Ubuntu
 Các lệnh cần tìm hiểu: 
 - Liệt kê các file trong thư mục: ls
 - Tạo thư mục: mkdir nameFolder
@@ -13,11 +13,11 @@ Các lệnh cần tìm hiểu:
 - Thay đổi quyền thao tác file: sudo chmod xxx filename
 - Edit file: sudo nano tenfile: CTRL+o - lưu nội dung file sau khi edit; CTRL+x - thoát edit file
 - Xem ip của máy Ubuntu: ip -4addr
-## 3. Cài đặt docker cho Ubuntu
-## 4. Kiểm tra phiên bản docker vừa cài đặt, kiểm tra phiên bản docker compose
-## 5. Cấu hình để docker chạy được mà không cần tiền tố sudo
-## 6. Tìm hiểu tập lệnh của docker và docker compose
-## 7. Đảm bảo tường lửa trên Ubuntu đã cho phép cổng 80, 1880, 9630 (Lệnh: sudo ufw allow ...)
+### 3. Cài đặt docker cho Ubuntu
+### 4. Kiểm tra phiên bản docker vừa cài đặt, kiểm tra phiên bản docker compose
+### 5. Cấu hình để docker chạy được mà không cần tiền tố sudo
+### 6. Tìm hiểu tập lệnh của docker và docker compose
+### 7. Đảm bảo tường lửa trên Ubuntu đã cho phép cổng 80, 1880, 9630 (Lệnh: sudo ufw allow ...)
 -------------------
 # BÀI LÀM
 ## I. Cài đặt hệ điều hành Unbuntu 24.04.4 LTS
@@ -65,6 +65,17 @@ ssh thuha@172.20.10.2
 
 ## II. Tìm hiểu các lệnh cơ bản của Ubuntu
 
+| STT | Lệnh cơ bản | Ý nghĩa / Tác dụng chính | Cú pháp chung | Ví dụ thực tế |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | **`ls`** | Liệt kê danh sách file và các thư mục. | `ls [options] [đường_dẫn]` | `ls -la` *(Liệt kê chi tiết gồm cả file ẩn)* |
+| 2 | **`mkdir`** | Tạo thư mục mới. | `mkdir [tên_thư_mục]` | `mkdir -p my_project/src` *(Tạo thư mục lồng nhau)* |
+| 3 | **`cd`** | Di chuyển / chuyển đổi thư mục làm việc. | `cd [đường_dẫn]` | `cd /etc/nginx` *(Di chuyển đến thư mục nginx)* |
+| 4 | **`cp`** | Sao chép file hoặc thư mục từ nơi này sang nơi khác. | `cp [tùy_chọn] [nguồn] [đích]` | `cp -r project_A project_B` *(Copy toàn bộ thư mục)* |
+| 5 | **`chmod`** | Thay đổi quyền thao tác (Đọc/Ghi/Thực thi) của file/thư mục. | `sudo chmod [mã_quyền] [tên_file]` | `sudo chmod 755 script.sh` *(Cấp quyền thực thi)* |
+| 6 | **`nano`** | Trình soạn thảo văn bản trực tiếp trên màn hình dòng lệnh. | `sudo nano [tên_file]` | `sudo nano /etc/hosts` *(Mở file hosts để sửa)* |
+| 7 | **`ip`** | Xem thông tin card mạng và địa chỉ IP của máy chủ. | `ip [tùy_chọn] [đối_tượng]` | `ip -4 addr` *(Chỉ xem địa chỉ IPv4)* |
+
+
 ## III. cài đặt docker và docker compose cho Ubuntu
 ### Sử dụng lệnh: sudo apt update để cập nhật danh sách phần mềm
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/839e41ba-c454-4d88-8901-dec70dcaa063" />
@@ -87,6 +98,30 @@ docker-compose --version
 => Kết quả sau khi cấu hình để docker chạy mà không cần tiền tố sudo
 
 ## V. Tìm hiểu tập lệnh của docker và docker compose
+### 🐳 Các lệnh của Docker (Single Container):
+
+| Lệnh | Tác dụng | Ví dụ |
+| :--- | :--- | :--- |
+| `docker pull` | Tải Image từ Docker Hub về máy. | `docker pull nginx:alpine` |
+| `docker images` | Xem danh sách các Image đã tải. | `docker images` |
+| `docker run` | Tạo và chạy một Container mới từ một image. | `docker run -d -p 80:80 --name web nginx` |
+| `docker ps -a` | Xem tất cả Container (đang chạy và đã dừng). | `docker ps -a` |
+| `docker exec -it` | Truy cập vào bên trong Container đang chạy. | `docker exec -it my_container bash` |
+| `docker logs -f` | Xem log của Container theo thời gian thực. | `docker logs -f my_container` |
+| `docker stop` | Dừng một Container. | `docker stop my_container` |
+| `docker rm -f` | Xóa bỏ hoàn toàn một Container. | `docker rm -f my_container` |
+| `docker rmi` | Xóa một Image khỏi máy. | `docker rmi nginx:alpine` |
+
+### 🏗️ Các lệnh Docker Compose (Multi-Container)
+| Lệnh | Tác dụng |
+| :--- | :--- |
+| `docker-compose up -d` | Khởi tạo và chạy toàn bộ dịch vụ ở chế độ ngầm. |
+| `docker-compose down` | Dừng và xóa toàn bộ containers, networks đã tạo. |
+| `docker-compose ps` | Kiểm tra trạng thái các dịch vụ trong file compose. |
+| `docker-compose logs -f` | Xem log của tất cả các dịch vụ cùng lúc. |
+| `docker-compose restart` | Khởi động lại các dịch vụ. |
+| `docker-compose exec [service] [cmd]` | Chạy lệnh trong một service cụ thể (vd: `docker-compose exec db bash`). |
+| `docker-compose build` | Build lại các Image nếu có sự thay đổi trong Dockerfile. |
 
 ## VI. Cấu hình tường lửa trên Ubuntu cho phép các cổng 80, 1880, 9630 (Lệnh: sudo ufw allow ...)
 - Chạy các lệnh sau trong cửa sổ powrshell của ubuntu để cho phép các cổng 80, 1880, 9630 hoạt động
