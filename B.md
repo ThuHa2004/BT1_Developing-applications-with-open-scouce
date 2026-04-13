@@ -22,21 +22,21 @@ Các lệnh cần tìm hiểu:
 # BÀI LÀM
 ## I. Cài đặt hệ điều hành Unbuntu 24.04.4 LTS
 ### 1. Truy cập vào: ```https://ubuntu.com/download/desktop để download```
-- Chọn Download để tải file iso Ubuntu 24.04.4 LTS về máy 
+Chọn Download để tải file iso Ubuntu 24.04.4 LTS về máy 
 <img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/82f51722-db46-4156-85a8-318534309091" />
 
 ### 2. Sử dụng VM_Ware để giả lập
 #### Tạo máy ảo
-- Mở VM_Ware, vào file chọn Create New Virtual Machine
+Mở VM_Ware, vào file chọn Create New Virtual Machine
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7761d24f-bd85-4030-88e5-4b4eaca4fc53" />
 
-- Chọn Installer disc image file (iso), sau đó chọn file iso đã tải trước đó
+Chọn Installer disc image file (iso), sau đó chọn file iso đã tải trước đó
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ecb31fc6-9460-4f6c-bb18-52ba51c8ea0b" />
 
-- Chọn vị trí để lưu máy ảo
+Chọn vị trí để lưu máy ảo
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76dfe1da-0e9e-4fa2-b009-707af498ec03" />
 
-- Cấu hình cho máy ảo
+Cấu hình cho máy ảo
 <img width="1913" height="1022" alt="image" src="https://github.com/user-attachments/assets/4ac39257-5000-47c6-bead-3ed7342334ed" />
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/25af85f2-20c2-4fa3-a3aa-434829ad04dc" />
@@ -57,12 +57,14 @@ ip a
 ```
 IP là 172.20.10.2
 ```
-#### Sau khi lấy được IP, mở cmd hoặc PowerShell trên windows và gỗ lệnh dưới đây để truy cập SSH vào Ubuntu
+#### Sau khi lấy được IP, mở cmd hoặc PowerShell trên windows và gõ lệnh dưới đây để truy cập SSH vào Ubuntu
 ```
 ssh thuha@172.20.10.2
 ```
 #### Tiếp theo nhập pasword, nếu đăng nhập thành công thì sẽ chuyển cửa sổ vào terminal của Ubuntu
+<img width="1097" height="911" alt="image" src="https://github.com/user-attachments/assets/77f25c19-7928-41cf-b9b9-073ff8361fe2" />
 
+---------------------
 ## II. Tìm hiểu các lệnh cơ bản của Ubuntu
 
 | STT | Lệnh cơ bản | Ý nghĩa / Tác dụng chính | Cú pháp chung | Ví dụ thực tế |
@@ -75,7 +77,7 @@ ssh thuha@172.20.10.2
 | 6 | **`nano`** | Trình soạn thảo văn bản trực tiếp trên màn hình dòng lệnh. | `sudo nano [tên_file]` | `sudo nano /etc/hosts` *(Mở file hosts để sửa)* |
 | 7 | **`ip`** | Xem thông tin card mạng và địa chỉ IP của máy chủ. | `ip [tùy_chọn] [đối_tượng]` | `ip -4 addr` *(Chỉ xem địa chỉ IPv4)* |
 
-
+-----------------------
 ## III. cài đặt docker và docker compose cho Ubuntu
 ### Sử dụng lệnh: sudo apt update để cập nhật danh sách phần mềm
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/839e41ba-c454-4d88-8901-dec70dcaa063" />
@@ -89,14 +91,16 @@ docker-compose --version
 ```
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6ce8aaa4-d245-4f1d-a855-0b651a1f56c6" />
 
+-----------------------
 ## IV. Cấu hình để docker để chạy mà không cần tiền tố sudo
 ### Bước 1. Thêm user vào group docker
-- Sử dụng lệnh ```sudo usermod -aG docker $USER``` để thêm user vào group docker (thay $USER bằng tên người dùng của mình, ví dụ: thua)
+- Sử dụng lệnh ```sudo usermod -aG docker $USER``` để thêm user vào group docker (thay $USER bằng tên người dùng của mình, ví dụ: thuha)
 - Sau khi đã thêm user vào group, ta cần đăng xuất ra và đăng nhập lại để quyền có hiệu lực. Hoặc có thể dùng lệnh ```newgrp docker``` để không cần thoát SSH ra để đăng nhập lại mà áp dụng quyền được luôn.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/95965913-9293-40b1-a0aa-0d3d6a312476" />
 
 => Kết quả sau khi cấu hình để docker chạy mà không cần tiền tố sudo
 
+-----------------
 ## V. Tìm hiểu tập lệnh của docker và docker compose
 ### 🐳 Các lệnh của Docker (Single Container):
 
@@ -123,6 +127,7 @@ docker-compose --version
 | `docker-compose exec [service] [cmd]` | Chạy lệnh trong một service cụ thể (vd: `docker-compose exec db bash`). |
 | `docker-compose build` | Build lại các Image nếu có sự thay đổi trong Dockerfile. |
 
+---------------------
 ## VI. Cấu hình tường lửa trên Ubuntu cho phép các cổng 80, 1880, 9630 (Lệnh: sudo ufw allow ...)
 - Chạy các lệnh sau trong cửa sổ powrshell của ubuntu để cho phép các cổng 80, 1880, 9630 hoạt động
 ```
