@@ -40,13 +40,13 @@ myapi/
 mkdir -p myapi
 ```
 ## 2. Tạo file ```myapi/app.py```, ```requirements.txt```, ```Dockerfile```
-Sử dụng lệnh các lệnh sau để tạo: 
+#### Sử dụng lệnh các lệnh sau để tạo: 
 ```
 nano app.py
 nano requirements.txt
 nano Dockerfile
 ```
-###  File ```myapi/app.py```
+####  File ```myapi/app.py```
 ```
 from flask import Flask, jsonify
 import random
@@ -81,12 +81,12 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=9630)
 ```
 
-### Khai báo thư viện sử dụng trong file ```requirements.txt```
+#### Khai báo thư viện sử dụng trong file ```requirements.txt```
 ```
 flask
 ```
 
-### File ```myapi/Dockerfile``` để khai báo sử dụng Python 3.9 slim
+#### File ```myapi/Dockerfile``` để khai báo sử dụng Python 3.9 slim
 ```
 FROM python:3.9-slim
 
